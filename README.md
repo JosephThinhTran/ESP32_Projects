@@ -25,11 +25,15 @@ Both the sensor data reading, heart beat calculation, and display data on OLED s
 - [MAX30105 Particle and Pulse Ox Sensor](https://learn.sparkfun.com/tutorials/max30105-particle-and-pulse-ox-sensor-hookup-guide/all#:~:text=This%20example%20runs%20a%20filter,average%20heart%20rate%20(BPM).)
 - [Monochrome 0.96" 128x64 OLED Graphic Display ](https://www.adafruit.com/product/326)
 
-## 2. Multi-threaded ADC reading and monitoring
+## 2. Multi-threaded ADC processing
 Three main tasks:
-- Read ADC samples per 100ms period.
-- Calculate average ADC value over 10 ADC samples.
-- Handle the serial terminal to display text and receiving command from user.
+- Read ADC samples (millivolts) per 100ms period.
+- Calculate average ADC voltage (millivolt) over 10 ADC samples.
+- Handle the serial terminal to display user input characters
+  - If receive 'Avg', print out the current average ADC voltage to serial terminal.
+
+Additional tasks:
+- Display average ADC voltage to the OLED display as well. This requires [Monochrome 0.96" 128x64 OLED Graphic Display ](https://www.adafruit.com/product/326) connected to the ESP32 board via I2C wires.
 
 ## 3. Heart beat monitoring over BLE
 TODO:
