@@ -12,13 +12,18 @@ This board is more expensive than the official Espressif's DevKit, but it's equi
 This board is basically a clone from the official Espressif's DevKit.
 
 # Projects
-## 1. Heart beat measuring and monitoring
+## 1. Heart beat monitoring
 ### FreeRTOS-based version
 - Thread 1: Read sensor data and calculate heart beat.
 - Thread 2: Send data to the OLED screen.
 
 ### Bare-metal version
 Both the sensor data reading, heart beat calculation, and display data on OLED screen are implemented in the "loop" function.
+
+### Additional Hardware Components
+- ESP32 board
+- [MAX30105 Particle and Pulse Ox Sensor](https://learn.sparkfun.com/tutorials/max30105-particle-and-pulse-ox-sensor-hookup-guide/all#:~:text=This%20example%20runs%20a%20filter,average%20heart%20rate%20(BPM).)
+- [Monochrome 0.96" 128x64 OLED Graphic Display ](https://www.adafruit.com/product/326)
 
 ## 2. Multi-threaded ADC reading and monitoring
 Three main tasks:
