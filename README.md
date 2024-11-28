@@ -14,8 +14,9 @@ This board is basically a clone from the official Espressif's DevKit.
 # Projects
 ## 1. Heart beat monitoring
 ### 1.1 FreeRTOS-based version
-- Thread 1: Read sensor data and calculate heart beat.
-- Thread 2: Handle data transfer to OLED screen.
+- Task 1: Read sensor data and calculate heart beat.
+- Task 2: Handle data transfer to OLED screen.
+- Task 3: Send average heart rate to the serrial terminal
 
 ### 1.2 Bare-metal version
 Both the sensor data reading, heart beat calculation, and display data on OLED screen are implemented in the "loop" function.
@@ -32,8 +33,8 @@ Both the sensor data reading, heart beat calculation, and display data on OLED s
 #### Wiring MAX3010x sensor breakout board to Freenove ESP32-S3 board
     5V = 5V (3.3V works for the OLED but not the MAX3010x sensor breakout board),
     GND = GND,
-    SDA = 21,
-    SCL = 47,
+    SDA = 19,
+    SCL = 20,
     INT = Not connected
 
 #### Wiring MAX3010x sensor breakout board to ESP32-C6-DEV-KIT-N8
