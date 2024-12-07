@@ -14,20 +14,28 @@ https://www.youtube.com/watch?v=qsflCf6ahXU&list=PLEBQazB0HUyQ4hAPU1cJED6t3DU0h3
 
 ***/
 // Board definition - Only one is defined
-#define ESP32_S3_FREENOVE_DK
+// #define ESP32_S3_FREENOVE_DK
 // #define ESP32_C6_DK
+#define ESP32_DK
 
 #ifdef ESP32_S3_FREENOVE_DK
-
-// Using only 1 core for all the tasks
-#ifdef CONFIG_FREERTOS_UNICORE
-static const BaseType_t appCpu = 0;
-#else
-static const BaseType_t appCpu = 1;
-#endif // CONFIG_FREERTOS_UNICORE
+  // Using only 1 core for all the tasks
+  #ifdef CONFIG_FREERTOS_UNICORE
+  static const BaseType_t appCpu = 0;
+  #else
+  static const BaseType_t appCpu = 1;
+  #endif // CONFIG_FREERTOS_UNICORE
 
 #elif defined(ESP32_C6_DK)   // Single-core ESP32 chip
 static const BaseType_t appCpu = 0;
+
+#elif defined(ESP32_DK)
+  // Using only 1 core for all the tasks
+  #ifdef CONFIG_FREERTOS_UNICORE
+  static const BaseType_t appCpu = 0;
+  #else
+  static const BaseType_t appCpu = 1;
+  #endif
 #endif  // Board def
 
 // Pin Settings
@@ -37,6 +45,9 @@ static const BaseType_t appCpu = 0;
 #elif defined(ESP32_C6_DK)
 #define ADC_PIN 2
 #define LED_PIN 8
+#elif defined(ESP32_DK)
+#define ADC_PIN 15
+#define LED_PIN 2
 #endif  // Board
 
 // Settings
