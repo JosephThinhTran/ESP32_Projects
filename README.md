@@ -4,7 +4,7 @@ Fun bare-metal and FreeRTOS-based Arduino projects using ESP32 microntrollers.
 # ESP32 boards
 The projects were tested on the following ESP32 boards:
 
-## [Freenove ESP32-S3-WROOM Board](https://store.freenove.com/products/fnk0085)
+## [Freenove ESP32-S3-WROOM CAM Board](https://store.freenove.com/products/fnk0085)
 This board is more expensive than the official Espressif's DevKit, but it's equipped with camera and SD card socket.
 
 
